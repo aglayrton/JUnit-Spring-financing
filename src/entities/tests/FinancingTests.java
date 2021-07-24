@@ -8,9 +8,9 @@ import entities.Financing;
 public class FinancingTests {
 
 	/*
-	 * Construtor 
-	 * Deve criar o objeto com os dados corretos quando os dados forem válidos 
-	 * Deve lançar IllegalArgumentException quando os dados não forem válidos
+	 * Construtor Deve criar o objeto com os dados corretos quando os dados forem
+	 * válidos Deve lançar IllegalArgumentException quando os dados não forem
+	 * válidos
 	 */
 
 	/*
@@ -43,9 +43,8 @@ public class FinancingTests {
 	}
 
 	/*
-	 * setTotalAmount 
-	 * Deve atualizar o valor quando os dados forem válidos 
-	 * Deve lançar IllegalArgumentException quando os dados não forem válidos
+	 * setTotalAmount Deve atualizar o valor quando os dados forem válidos Deve
+	 * lançar IllegalArgumentException quando os dados não forem válidos
 	 */
 	@Test
 	public void setTotalAmountShouldUpdateWheDataValid() {
@@ -68,4 +67,32 @@ public class FinancingTests {
 			fn.setTotalAmount(200000.00);
 		});
 	}
+
+	/*
+	 * setIncome Deve atualizar o valor quando os dados forem válidos Deve lançar
+	 * IllegalArgumentException quando os dados não forem válidos
+	 */
+
+	@Test
+	public void setIncomeShouldUpdateWhenDataValids() {
+
+		Financing fn = new Financing(100000.0, 2000.0, 80);
+
+		fn.setIncome(9000.0);
+
+		Assertions.assertEquals(9000, fn.getIncome());
+
+	}
+
+	@Test
+	public void setIncomeShouldIllegalArgumentException() {
+
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			Financing fn = new Financing(100000.0, 2000.0, 80);
+
+			fn.setIncome(9000.0);
+		});
+
+	}
+
 }
