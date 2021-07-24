@@ -120,5 +120,20 @@ public class FinancingTests {
 		});
 
 	}
+	
+	/*Deve calcular corretamente o valor da entrada*/
+	@Test
+	public void entryShouldCalculateEntryCorrectly() {
+		Financing fn = new Financing(100000.0, 2000.0, 80);
+		Assertions.assertEquals(20000, fn.entry());
+	}
+	/*Deve calcular corretamente o valor da entrada*/
+	@Test
+	public void quotaShouldCalculateEntryCorrectly() {
+		Financing fn = new Financing(100000.0, 2000.0, 80);
+		Assertions.assertEquals(1000, fn.quota());
+	}
+	
+	
 
 }
