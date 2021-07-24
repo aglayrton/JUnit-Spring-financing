@@ -90,7 +90,33 @@ public class FinancingTests {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			Financing fn = new Financing(100000.0, 2000.0, 80);
 
-			fn.setIncome(9000.0);
+			fn.setIncome(1000.0);
+		});
+
+	}
+
+	/*
+	 * setMonths Deve atualizar o valor quando os dados forem válidos 
+	 * Deve lançar IllegalArgumentException quando os dados não forem válidos
+	 */
+	@Test
+	public void setMonthsShouldUpdateWhenDataValids() {
+
+		Financing fn = new Financing(100000.0, 2000.0, 80);
+
+		fn.setMonths(90);
+
+		Assertions.assertEquals(90, fn.getMonths());
+
+	}
+
+	@Test
+	public void setMonthsShouldIllegalArgumentException() {
+
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			Financing fn = new Financing(100000.0, 2000.0, 80);
+
+			fn.setMonths(10);
 		});
 
 	}
